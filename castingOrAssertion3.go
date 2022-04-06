@@ -16,4 +16,5 @@ func main() {
 
 	fmt.Println(secret.(*person).age)
 	fmt.Println(secret.(person).age) // atau bisa juga penulisan castingnya seperti ini
+	fmt.Println((*person)(nil)) // atau bisa juga penulisan castingnya seperti ini
 }
