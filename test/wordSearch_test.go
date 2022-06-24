@@ -23,7 +23,7 @@ var ReferenceInverse = "hcthugcsqkylogmscqmmhkumqyy"
 
 var Count int
 
-func TestMain(t *testing.T) {
+func TestWordSearch(t *testing.T) {
 	// list := []string{
 	// 	"aatc",
 	// 	"aaaa",

@@ -8,7 +8,7 @@ func main() {
 
 	increment := func() {
 		fmt.Println("Increment")
-		name := "joki"	// this variable can't e accessed from outside of the increment
+		name := "joki"	// this variable can't be accessed from outside of the increment
 		counter++
 		fmt.Println(name)
 	}
