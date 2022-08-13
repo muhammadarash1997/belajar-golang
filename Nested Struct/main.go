@@ -16,22 +16,25 @@ type person struct {
 }
 
 func main() {
-	p1 := person{}
-
 	// CARA INSTANSIASI PERTAMA ADALAH INVALID
-	// p1 := person{
-	// 	name: "alex",
-	// 	address: address{
-	// 		city: "Paris",
-	// 		districts: "abc",
-	// 	},
-	// }
+	p1 := person{
+        name: "alex",
+        address: struct {
+            city     string
+            districts int
+        }{
+            city:     "A",
+            districts: 1,
+        },
+    }
+	fmt.Println(p1)
 
 	// CARA INSTANSIASI KEDUA ADALAH VALID
-	p1.name = "alex"
-	p1.address.city = "Paris"
-	p1.address.districts = 1
+	p2 := person{}
+	p2.name = "mike"
+	p2.address.city = "B"
+	p2.address.districts = 1
 
-	fmt.Println(p1)
+	fmt.Println(p2)
 }
 
