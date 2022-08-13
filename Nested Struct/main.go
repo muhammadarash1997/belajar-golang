@@ -3,14 +3,35 @@
 
 package main
 
-func main() {
+import "fmt"
+
+// NESTED STRUCT SEPERTI DIBAWAH KETIKA KITA INGIN INSTANSIASI MAKA TIDAK BISA LANGSUNG FIELDNYA DIISI
+// TETAPI HARUS SATU-PERSATU. BIASANYA DIGUNAKAN UNTUK UNMARSHALL JSON
+type person struct {
+	name string
+	address struct {
+		city string
+		districts int
+	}
 }
 
-type student struct {
-	person struct {
-		name string
-		age  int
-	}
-	grade   int
-	hobbies []string
+func main() {
+	p1 := person{}
+
+	// CARA INSTANSIASI PERTAMA ADALAH INVALID
+	// p1 := person{
+	// 	name: "alex",
+	// 	address: address{
+	// 		city: "Paris",
+	// 		districts: "abc",
+	// 	},
+	// }
+
+	// CARA INSTANSIASI KEDUA ADALAH VALID
+	p1.name = "alex"
+	p1.address.city = "Paris"
+	p1.address.districts = 1
+
+	fmt.Println(p1)
 }
+
